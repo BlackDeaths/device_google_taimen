@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit some common Project arrow stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+# Inherit some common Project bliss stuff.
+$(call inherit-product, vendor/bliss/config/common_full_phone.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -23,15 +23,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, device/google/taimen/aosp_taimen.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := arrow_taimen
+PRODUCT_NAME := bliss_taimen
 PRODUCT_DEVICE := taimen
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 2 XL
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# ArrowOS additions
-DEVICE_MAINTAINER := ReallySnow
-$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="taimen" \
